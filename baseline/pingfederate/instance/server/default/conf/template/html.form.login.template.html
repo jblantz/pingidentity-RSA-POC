@@ -52,7 +52,21 @@ is not recommended as it may interfere with expected server behavior.
     #end
 </head>
 
-<body style="background-image:url('assets/images/boeingbackground.jpg');background-position:center;background-size: 100%;" onload="setFocus();">
+<body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+div {
+    width: 100%;
+    height: 100%;
+    max-height: 100%;
+    margin: 0;
+    padding: 0;
+    background-image: url('assets/images/boeingbackground.jpg');
+    background-size:100% 100%;
+    background-repeat: no-repeat;
+} onload="setFocus();">
 
 <div class="ping-container ping-signin login-template">
 

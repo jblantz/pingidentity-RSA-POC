@@ -18,7 +18,7 @@ services:
       - pingnet-internal
 
   pingaccess:
-    image: pingidentity/pingaccess:1609
+    image: pingidentity/pingaccess:edge
     command: wait-for pingfederate:9031 -t 420 -- entrypoint.sh start-server
     environment: 
       - SERVER_PROFILE_URL=https://github.com/jblantz/pingidentity-RSA-POC.git

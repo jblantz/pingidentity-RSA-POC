@@ -44,7 +44,7 @@ services:
       - ~/.pingidentity/devops
     ports:
       - 1646:636
-      - 1453:443
+      - 1443:443
     networks:
       - pingnet-internal
   

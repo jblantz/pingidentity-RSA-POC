@@ -11,8 +11,7 @@ running PingFederate, PingDirectory, PingAccess, and more in Docker containers.
 * [10-docker-standalone](https://github.com/pingidentity/pingidentity-devops-getting-started/tree/master/10-docker-standalone)    - Run Ping Identity standalone products in Docker containers 
 * [11-docker-compose](https://github.com/pingidentity/pingidentity-devops-getting-started/tree/master/11-docker-compose)       - Define and run multi-container Ping Identity Docker images with Docker Compose
 * [12-docker-swarm](https://github.com/pingidentity/pingidentity-devops-getting-started/tree/master/12-docker-swarm)         - Deploy Ping Identity product stacks using Docker Swarm
-* [20-kubernetes-minikube](https://github.com/pingidentity/pingidentity-devops-getting-started/tree/master/20-kubernetes-minikube)  - Deploy PingDirectory in a local Minikube environment
-* [21-kubernetes-amazon](https://github.com/pingidentity/pingidentity-devops-getting-started/tree/master/https://github.com/pingidentity/pingidentity-devops-getting-started/tree/master/10-docker-standalone)    - Deploy PingDirectory in AWS using Kubernetes
+* [20-kubernetes](https://github.com/pingidentity/pingidentity-devops-getting-started/tree/master/20-kubernetes)  - Deploy PingDirectory in Kubernetes
 
 ## ldapsdk tool
 Use the `ldapsdk` tool in the top level directory to startup an `ldap-sdk-tools` container
@@ -23,7 +22,7 @@ simply run.  To edit the settings in the future, use the configure option:
 `ldapsdk configure`.
 
 ## Bash profile Docker helper aliases
-Several aliases are available in the utility `bash_profile_docker` to perform common 
+Several aliases are available in the utility `bash_profile_devops` to perform common 
 Docker commands with containers, images, services, and so on.  You can easily source this
 from your bash startup file (i.e. .bash_profile) to make easy use of these alias.
 

@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 
 <html lang="en_US">
@@ -1218,7 +1217,7 @@ window['adrum-start-time'] = new Date().getTime();
     <div class="ping-body-container">
 
         <br/>
-        <form method="POST" action="$resume_url" autocomplete="off">
+        <form method="POST" action="$resume_url" autocomplete="off" id="identifierForm">
             #if ($existing_identifiers.size() > 0)
             <ul id="existingAccountsSelectionList" class="identifier-first__account-list">
                 #foreach( $existing in $existing_identifiers )
@@ -1290,8 +1289,8 @@ window['adrum-start-time'] = new Date().getTime();
 <script type="text/javascript">
 
     function removeIdentifier(existingIdentifier) {
-        document.forms[0]['$clear_identifier'].value = existingIdentifier;
-        document.forms[0]['$identifier'].value = '';
+        document.forms['identifierForm']['$clear_identifier'].value = existingIdentifier;
+        document.forms['identifierForm']['$identifier'].value = '';
         submitForm();
     }
 
@@ -1311,17 +1310,17 @@ window['adrum-start-time'] = new Date().getTime();
     }
 
     function selectIdentifier(identifier) {
-        document.forms[0]['$identifier'].value = identifier;
+        document.forms['identifierForm']['$identifier'].value = identifier;
         postOk();
     }
 
     function postOk() {
         // remove error tips
-        if (document.forms[0]['$identifier'].value !== '') {
+        if (document.forms['identifierform']['$identifier'].value !== '') {
             document.getElementById('username-text').className = 'place-bottom type-alert tooltip-text';
         }
         // Add back
-        if (document.forms[0]['$identifier'].value === '') {
+        if (document.forms['identifierForm']['$identifier'].value === '') {
             document.getElementById('username-text').className += ' show';
         }
         else {
@@ -1331,13 +1330,13 @@ window['adrum-start-time'] = new Date().getTime();
 
     function postCancel()
     {
-        document.forms[0]['$cancel'].value = 'true';
+        document.forms['identifierForm']['$cancel'].value = 'true';
         submitForm()
     }
 
     function submitForm()
     {
-        document.forms[0].submit();
+        document.forms['identifierForm'].submit();
     }
 
     function postOnReturn(e) {

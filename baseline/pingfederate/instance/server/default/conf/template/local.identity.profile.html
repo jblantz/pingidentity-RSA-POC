@@ -1203,7 +1203,7 @@ window['adrum-start-time'] = new Date().getTime();
 <div class="ping-container ping-signin">
     <div class="ping-body-container">
         <div>
-            <form method="POST" action="$url" autocomplete="off">
+            <form method="POST" action="$url" autocomplete="off" id="lIPForm">
 
                 <div class="account-title">
                     $templateMessages.getMessage($messageKeyPrefix, "title")
@@ -1791,29 +1791,29 @@ window['adrum-start-time'] = new Date().getTime();
     }
 
     function postDisconnect(id) {
-        document.forms[0]['$disconnect'].value = id;
-        document.forms[0].submit();
+        document.forms['lIPForm']['$disconnect'].value = id;
+        document.forms['lIPForm'].submit();
     }
 
     function postConnect(id) {
-        document.forms[0]['$connect'].value = id;
-        document.forms[0].submit();
+        document.forms['lIPForm']['$connect'].value = id;
+        document.forms['lIPForm'].submit();
     }
 
     function postSendEmailVerification() {
-        document.forms[0]['$sendEmailVerification'].value = 'clicked';
-        document.forms[0].submit();
+        document.forms['lIPForm']['$sendEmailVerification'].value = 'clicked';
+        document.forms['lIPForm'].submit();
     }
 
     function postSave() {
         if (!requiredFieldsMissing()) {
             // run browser validation
-            if(document.forms[0].checkValidity && !document.forms[0].checkValidity() && document.forms[0].reportValidity) {
-                document.forms[0].reportValidity();
+            if(document.forms['lIPForm'].checkValidity && !document.forms['lIPForm'].checkValidity() && document.forms['lIPForm'].reportValidity) {
+                document.forms['lIPForm'].reportValidity();
                 return false;
             }
-            document.forms[0]['$save'].value = 'clicked';
-            document.forms[0].submit();
+            document.forms['lIPForm']['$save'].value = 'clicked';
+            document.forms['lIPForm'].submit();
         }
     }
 
@@ -1932,8 +1932,8 @@ window['adrum-start-time'] = new Date().getTime();
             return false;
         }
         else {
-            document.forms[0]['$changepass'].value = 'clicked';
-            document.forms[0].submit();
+            document.forms['lIPForm']['$changepass'].value = 'clicked';
+            document.forms['lIPForm'].submit();
         }
     }
 
@@ -1945,19 +1945,19 @@ window['adrum-start-time'] = new Date().getTime();
             return false;
         }
         else {
-            document.forms[0]['$setpass'].value = 'clicked';
-            document.forms[0].submit();
+            document.forms['lIPForm']['$setpass'].value = 'clicked';
+            document.forms['lIPForm'].submit();
         }
     }
 
     function postDelete() {
-        document.forms[0]['$delete'].value = 'clicked';
-        document.forms[0].submit();
+        document.forms['lIPForm']['$delete'].value = 'clicked';
+        document.forms['lIPForm'].submit();
     }
 
     function postLogout() {
-        document.forms[0]['$logout'].value = 'clicked';
-        document.forms[0].submit();
+        document.forms['lIPForm']['$logout'].value = 'clicked';
+        document.forms['lIPForm'].submit();
     }
 
     function postChangePassOnReturn(e) {
@@ -2102,7 +2102,7 @@ window['adrum-start-time'] = new Date().getTime();
         }
     #end
 
-    const requiredElements = document.forms[0].querySelectorAll('.required-missing-display,.pass-required');
+    const requiredElements = document.forms['lIPForm'].querySelectorAll('.required-missing-display,.pass-required');
     for (i = 0; i < requiredElements.length; i++) {
         var requiredElement = requiredElements[i];
         requiredElement.addEventListener('keyup', function (event) {
